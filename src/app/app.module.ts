@@ -11,9 +11,10 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { FilterComponent } from './filter/filter.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { MovieReviewComponent } from './movie-review/movie-review.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SliderComponent, MovieComponent, SearchComponent, FooterComponent, FilterComponent, PaginationComponent],
+  declarations: [AppComponent, HeaderComponent, SliderComponent, MovieComponent, SearchComponent, FooterComponent, FilterComponent, PaginationComponent, MovieReviewComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
