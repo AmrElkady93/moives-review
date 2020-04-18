@@ -26,7 +26,10 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/app/shared/fonts/font-awesome.min.css"
             ],
-            "scripts": ["./node_modules/jquery/dist/jquery.min.js"]
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "src/app/shared/customScript.js"
+            ]
           },
           "configurations": {
             "production": {

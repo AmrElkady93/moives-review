@@ -8,19 +8,10 @@
       <app-search></app-search>
     </div>
   </div>
-  <main class="main-content">
-    <div class="container">
-      <div class="page">
-        <div class="row" *ngFor="let i of [1, 2]">
-          <div class="col-md-3" *ngFor="let j of [1, 2, 3, 4]">
-            <app-movie></app-movie>
-          </div>
-        </div>
-      </div>
-      <app-pagination></app-pagination>
-    </div>
-  </main>
+  <div><router-outlet></router-outlet></div>
   <div>
     <app-footer></app-footer>
   </div>
+
+  <!-- <app-movie-review></app-movie-review> -->
 </div>
