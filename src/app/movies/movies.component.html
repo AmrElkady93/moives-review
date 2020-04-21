@@ -1,0 +1,33 @@
+<main class="main-content">
+  <div class="container">
+    <app-spinner></app-spinner>
+    <div class="page">
+      <div
+        class="row"
+        *ngFor="
+          let r of movies
+            | paginate
+              : {
+                  itemsPerPage: 20,
+                  currentPage: currentPage,
+                  totalItems: total_results
+                };
+          let i = index
+        "
+      >
+        <div class="col-md-3" *ngFor="let j of [0, 1, 2, 3]">
+          <app-movie
+            *ngIf="i < movies.length / 4"
+            [movie]="movies[i * 4 + j]"
+          ></app-movie>
+        </div>
+      </div>
+    </div>
+    <pagination-controls
+      (pageChange)="pageChanged($event)"
+      maxSize="10"
+    ></pagination-controls>
+  </div>
+</main>
+
+<!-- *ngIf="i < movies.length / 4" -->

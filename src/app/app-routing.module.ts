@@ -1,11 +1,18 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
 import { MovieReviewComponent } from "./movie-review/movie-review.component";
+import { MoviesComponent } from "./movies/movies.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "home", component: HomeComponent },
+  { path: "", redirectTo: "/movies", pathMatch: "full" },
+  {
+    path: "movies",
+    component: MoviesComponent,
+    children: [
+      { path: "popular", component: MoviesComponent },
+      { path: "top", component: MoviesComponent }
+    ]
+  },
   { path: "movie-review/:id", component: MovieReviewComponent }
 ];
 

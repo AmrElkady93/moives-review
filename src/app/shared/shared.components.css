@@ -214,7 +214,7 @@ body {
   background-color: #131a20;
   background-image: url(src/assets/dummy/background.jpg);
   background-position: top center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   color: #84878d;
   font-family: "Roboto", "Open Sans", sans-serif;
   font-size: 15px;
@@ -1573,9 +1573,11 @@ ul.arrow {
 .page img {
   max-width: 100%; }
 .page .movie-title {
-  font-size: 36px;
-  font-size: 2.4em;
-  font-weight: 300; }
+  font-size: 3px;
+  font-size: 0.4em;
+  font-weight: 300;
+  margin-bottom:20px
+}
 
 .filters {
   margin-bottom: 50px; }
@@ -1673,7 +1675,11 @@ ul.arrow {
  * Footer Styles
  */
 .site-footer {
-  padding: 50px 0; }
+  padding: 50px 0; 
+    margin-left: -83px;
+    margin-right: -77px;
+    margin-top: -24px;
+  }
   .site-footer .widget {
     margin-bottom: 30px; }
   .site-footer .widget-title {

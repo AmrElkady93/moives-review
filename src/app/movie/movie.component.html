@@ -1,7 +1,11 @@
-<div class="movie">
-  <figure class="movie-poster">
-    <img src="./assets/dummy/thumb-3.jpg" alt="#" />
-  </figure>
-  <div class="movie-title"><a style="cursor: pointer;">Maleficient</a></div>
-  <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+<figure class="movie-poster">
+  <img [src]="image" alt="#" style="width: 200px; height: 200px; " />
+</figure>
+<div class="movie-title">
+  <a
+    style="cursor: pointer;font-size: 16px; font-style: bold;"
+    [routerLink]="'/movie-review/' + movie.id"
+    >{{ movie.title }}</a
+  >
 </div>
+<!-- <p>test</p> -->
