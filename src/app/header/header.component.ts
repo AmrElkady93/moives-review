@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onHome() {
-    this.router.navigate(["movies"]);
+    this.router.navigate(["/movies"]);
+    this.hdService.getPoupular().subscribe();
   }
 }
