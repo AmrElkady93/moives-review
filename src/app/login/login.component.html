@@ -1,0 +1,35 @@
+<div class="signup-form">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h2>Login</h2>
+    <p *ngIf="isLogged" style="color: red;">email or password invaild</p>
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        placeholder="Email"
+        ngModel
+        required="required"
+        email
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        placeholder="Password"
+        ngModel
+        required="required"
+      />
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">
+        Login
+      </button>
+    </div>
+  </form>
+  <div class="text-center" style="color: white;">
+    Don`t have an account? <a routerLink="/signup">Sign up</a>
+  </div>
+</div>

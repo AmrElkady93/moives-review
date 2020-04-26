@@ -1,0 +1,91 @@
+<div class="signup-form">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <h2>Register</h2>
+    <p class="hint-text">
+      Create your account. It's free and only takes a minute.
+    </p>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-6">
+          <input
+            type="text"
+            class="form-control"
+            name="first_name"
+            formControlName="first_name"
+            placeholder="First Name"
+            required="required"
+          />
+        </div>
+
+        <div class="col-xs-6">
+          <input
+            type="text"
+            class="form-control"
+            name="last_name"
+            formControlName="last_name"
+            placeholder="Last Name"
+            required="required"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        formControlName="email"
+        placeholder="Email"
+        required="required"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        formControlName="password"
+        placeholder="Password"
+        required="required"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        name="confirm_password"
+        formControlName="confirm_password"
+        placeholder="Confirm Password"
+        required="required"
+      />
+      <label style="color: red;" *ngIf="isNotPasswordMatched"
+        >password dosn`t match</label
+      >
+    </div>
+    <div class="form-group">
+      <label class="checkbox-inline"
+        ><input
+          type="checkbox"
+          required="required"
+          value="true"
+          [checked]="acceptTerms"
+          (change)="acceptTerms = !acceptTerms"
+        />
+        I accept the <a href="#">Terms of Use</a> &amp;
+        <a href="#">Privacy Policy</a></label
+      >
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-success btn-lg btn-block"
+        [disabled]="!acceptTerms"
+      >
+        Register Now
+      </button>
+    </div>
+  </form>
+  <div class="text-center" style="color: white;">
+    Already have an account? <a routerLink="/login">Sign in</a>
+  </div>
+</div>

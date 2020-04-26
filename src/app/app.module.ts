@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { NgxPaginationModule } from "ngx-pagination";
@@ -10,14 +11,14 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { SliderComponent } from "./slider/slider.component";
 import { MovieComponent } from "./movie/movie.component";
-import { SearchComponent } from "./search/search.component";
 import { FooterComponent } from "./footer/footer.component";
-import { FilterComponent } from "./filter/filter.component";
 import { PaginationComponent } from "./pagination/pagination.component";
 import { MovieReviewComponent } from "./movie-review/movie-review.component";
 import { SpinnerComponent } from "./shared/spinner/spinner.component";
 import { MoviesComponent } from "./movies/movies.component";
 import { InterceptorService } from "./services/interceptor.service";
+import { LoginComponent } from "./login/login.component";
+import { SignupComponent } from "./signup/signup.component";
 
 @NgModule({
   declarations: [
@@ -25,13 +26,13 @@ import { InterceptorService } from "./services/interceptor.service";
     HeaderComponent,
     SliderComponent,
     MovieComponent,
-    SearchComponent,
     FooterComponent,
-    FilterComponent,
     PaginationComponent,
     MovieReviewComponent,
     SpinnerComponent,
-    MoviesComponent
+    MoviesComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,9 @@ import { InterceptorService } from "./services/interceptor.service";
     HttpClientModule,
     NgxPaginationModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     {

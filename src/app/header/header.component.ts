@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { HeaderService } from "../services/header.service";
 import { Router } from "@angular/router";
+import { LoginService } from "../services/login.service";
+import { User } from "../model/user.model";
 
 @Component({
   selector: "app-header",
@@ -8,9 +10,20 @@ import { Router } from "@angular/router";
   styleUrls: []
 })
 export class HeaderComponent implements OnInit {
-  constructor(private hdService: HeaderService, private router: Router) {}
+  userData: string;
 
-  ngOnInit() {}
+  constructor(
+    private hdService: HeaderService,
+    private lService: LoginService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.lService.user.subscribe(res => {
+      this.userData = res.fullName;
+      console.log(this.userData);
+    });
+  }
 
   onGetPopularMovies() {
     this.hdService.getPoupular().subscribe();
@@ -23,5 +36,10 @@ export class HeaderComponent implements OnInit {
   onHome() {
     this.router.navigate(["/movies"]);
     this.hdService.getPoupular().subscribe();
+  }
+
+  logout() {
+    this.lService.logout();
+    this.router.navigate(["/login"]);
   }
 }

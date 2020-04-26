@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 
 import { HomeService } from "../services/home.service";
@@ -10,7 +10,7 @@ import { NgxSpinnerService } from "ngx-spinner";
   templateUrl: "./movies.component.html",
   styleUrls: ["./movies.component.css"]
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
   constructor(
     private hservece: HomeService,
     private spinner: NgxSpinnerService
@@ -23,7 +23,9 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
     this.spinner.show();
 
-    this.movieSub = this.hservece.getPopularMoives().subscribe();
+    this.movieSub = this.hservece.getPopularMoives().subscribe(() => {
+      this.currentPage = 1;
+    });
 
     this.hservece.moivesChanged.subscribe(res => {
       this.movies = res;
@@ -43,5 +45,9 @@ export class MoviesComponent implements OnInit {
       .getPopularMoviesPageNumber(this.currentPage)
       .subscribe();
     this.spinner.hide();
+  }
+
+  ngOnDestroy() {
+    this.movieSub.unsubscribe();
   }
 }

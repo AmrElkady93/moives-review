@@ -1,5 +1,7 @@
 <figure class="movie-poster">
-  <img [src]="image" alt="#" style="width: 200px; height: 200px; " />
+  <a [routerLink]="'/movie-review/' + movie.id"
+    ><img [src]="image" alt="#" style="width: 200px; height: 200px; " />
+  </a>
 </figure>
 <div class="movie-title">
   <a
@@ -8,4 +10,3 @@
     >{{ movie.title }}</a
   >
 </div>
-<!-- <p>test</p> -->
