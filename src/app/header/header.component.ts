@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HeaderService } from "../services/header.service";
 import { Router } from "@angular/router";
 import { LoginService } from "../services/login.service";
-import { User } from "../model/user.model";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-header",
@@ -15,8 +15,11 @@ export class HeaderComponent implements OnInit {
   constructor(
     private hdService: HeaderService,
     private lService: LoginService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translate: TranslateService
+  ) {
+    this.translate.setDefaultLang("en");
+  }
 
   ngOnInit() {
     this.lService.user.subscribe(res => {
@@ -41,5 +44,9 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.lService.logout();
     this.router.navigate(["/login"]);
+  }
+
+  changeLang(lang: string) {
+    this.translate.use(lang);
   }
 }

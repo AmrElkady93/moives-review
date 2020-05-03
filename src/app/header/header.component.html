@@ -3,7 +3,7 @@
     <a href="index.html" id="branding">
       <img src="./assets/images/logo.png" alt="" class="logo" />
       <div class="logo-copy">
-        <h1 class="site-title">SHOWME</h1>
+        <h1 class="site-title">{{ "header.title" | translate }}</h1>
         <small class="site-description">Tagline goes here</small>
       </div>
     </a>
@@ -18,7 +18,7 @@
             style="cursor: pointer;"
             (click)="onHome()"
             routerLinkActive="current-menu-item"
-            >Home</a
+            >{{ "header.home" | translate }}</a
           >
         </li>
         <!-- <li class="menu-item"><a href="about.html">About</a></li> -->
@@ -28,7 +28,7 @@
             routerLinkActive="active"
             routerLink="movies/popular"
             (click)="onGetPopularMovies()"
-            >Popular</a
+            >{{ "header.popular" | translate }}</a
           >
         </li>
         <!-- <li class="menu-item"><a href="joinus.html">Join us</a></li> -->
@@ -38,7 +38,7 @@
             routerLinkActive="current-menu-item"
             routerLink="movies/top"
             (click)="onGetTopRatedMovies()"
-            >TopRated</a
+            >{{ "header.topRated" | translate }}</a
           >
         </li>
         <li class="menu-item">
@@ -46,7 +46,23 @@
             style="cursor: pointer;"
             routerLinkActive="current-menu-item"
             (click)="logout()"
-            >Logout</a
+            >{{ "header.logout" | translate }}</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            style="cursor: pointer;"
+            routerLinkActive="current-menu-item"
+            (click)="changeLang('ar')"
+            >AR</a
+          >
+        </li>
+        <li class="menu-item">
+          <a
+            style="cursor: pointer;"
+            routerLinkActive="current-menu-item"
+            (click)="changeLang('en')"
+            >EN</a
           >
         </li>
       </ul>
@@ -54,9 +70,9 @@
     </div>
     <div>
       <!-- <P style="color: white;">hi, {{ userData }}</P> -->
-      <a (click)="logout()" style="cursor: pointer;" style="color: white;"
+      <!-- <a (click)="logout()" style="cursor: pointer;" style="color: white;"
         >Logout</a
-      >
+      > -->
     </div>
 
     <!-- .main-navigation -->

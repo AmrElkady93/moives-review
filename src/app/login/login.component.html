@@ -1,13 +1,13 @@
 <div class="signup-form">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <h2>Login</h2>
-    <p *ngIf="isLogged" style="color: red;">email or password invaild</p>
+    <h2 [translate]="'login.header'"></h2>
+    <p *ngIf="isLogged" style="color: red;">{{ "login.error" | translate }}</p>
     <div class="form-group">
       <input
         type="email"
         class="form-control"
         name="email"
-        placeholder="Email"
+        placeholder="{{ 'login.email' | translate }}"
         ngModel
         required="required"
         email
@@ -18,18 +18,19 @@
         type="password"
         class="form-control"
         name="password"
-        placeholder="Password"
+        placeholder="{{ 'login.password' | translate }}"
         ngModel
         required="required"
       />
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-success btn-lg btn-block">
-        Login
+        {{ "login.btn" | translate }}
       </button>
     </div>
   </form>
   <div class="text-center" style="color: white;">
-    Don`t have an account? <a routerLink="/signup">Sign up</a>
+    {{ "login.footer1" | translate }}
+    <a routerLink="/signup">{{ "login.footer2" | translate }}</a>
   </div>
 </div>

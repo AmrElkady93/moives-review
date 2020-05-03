@@ -1,0 +1,19 @@
+{
+    "header":{
+                "popular":"popluar",
+                "topRated":"topRated",
+                "home":"home",
+                "logout":"logout",
+                "title":"SHOWME"   
+             },
+    
+    "login":{
+               "header":"Login",
+                "email":"Email",
+                "password":"password",
+                "error":"email or password invaild",
+                "btn":"Login",
+                "footer1":"Don`t have an account?",
+                "footer2":"Sign up"
+            }
+}
